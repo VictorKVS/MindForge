@@ -1,0 +1,19 @@
+# Унифицированные переводы строк (LF)
+* text=auto eol=lf
+
+# Указываем бинарные типы (не пытаться сравнивать как текст)
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.gif  binary
+*.pdf  binary
+*.doc  binary
+*.docx binary
+*.xls  binary
+*.xlsx binary
+
+# Подсказки git diff/merge для некоторых форматов
+*.md   linguist-detectable=true
+*.yml  linguist-detectable=true
+*.yaml linguist-detectable=true
+*.json linguist-detectable=true

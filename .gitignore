@@ -1,0 +1,38 @@
+#.gitignore
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.env
+.venv/
+venv/
+*.sqlite3
+
+# Jupyter / logs
+.ipynb_checkpoints/
+logs/
+*.log
+
+# VSCode / PyCharm
+.vscode/
+.idea/
+
+# Docker
+*.pid
+*.seed
+*.bak
+
+# Tests / coverage
+.coverage
+htmlcov/
+.pytest_cache/
+
+# Build
+dist/
+build/
+*.egg-info/
+
+# System
+.DS_Store
+Thumbs.db
