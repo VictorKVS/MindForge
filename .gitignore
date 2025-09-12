@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.env
+.venv/
+
+# Tests & cache
+.coverage
+htmlcov/
+.pytest_cache/
+
+# 1C
+1С/
+*.1CD
+*.1CL
+*.cfl
+*.lgd
+*.cgr
+*.dt
+
+# Windows мусор
+NUL
+Thumbs.db
+Desktop.ini
+
+# VSCode
+.vscode/
+.alcache/
+.alpackages/
+.snapshots/
+.output/
+
+# Build
+dist/
+build/
+
+# MindForge специфичное
+MindForge — Flat Layout Scaffold (mf_core) v0.*.md
