@@ -1,8 +1,0 @@
-# requirements-dev.txt
-fastapi
-uvicorn
-pydantic
-python-multipart
-httpx
-pytest
-pytest-asyncio
