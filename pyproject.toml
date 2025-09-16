@@ -1,0 +1,41 @@
+﻿[build-system]
+requires = ["setuptools>=65.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mindforge-core"
+version = "0.1.0"
+description = "MindForge вЂ” РёРЅС‚РµРіСЂРёСЂРѕРІР°РЅРЅР°СЏ СЃРёСЃС‚РµРјР° СѓРїСЂР°РІР»РµРЅРёСЏ РР‘ Рё IT-РїСЂРѕС†РµСЃСЃР°РјРё"
+readme = "README.md"
+requires-python = ">=3.12"
+authors = [
+  { name="Viktor Kulichenko", email="cocmosx@mail.ru" }
+]
+license = { text = "MIT" }
+
+dependencies = [
+  "fastapi>=0.115",
+  "uvicorn>=0.34",
+  "pydantic>=2.0",
+  "sqlalchemy>=2.0",
+  "httpx>=0.28",
+]
+
+[tool.setuptools]
+package-dir = {"" = "."}
+packages = ["mf_core"]
+
+[tool.pytest.ini_options]
+minversion = "8.0"
+addopts = "-ra -q"
+testpaths = ["tests"]
+
+[tool.black]
+line-length = 88
+
+[tool.isort]
+profile = "black"
+
+[tool.ruff]
+line-length = 88
+target-version = "py312"
