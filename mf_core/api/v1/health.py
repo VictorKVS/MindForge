@@ -6,8 +6,10 @@ from fastapi import APIRouter
 # 2. Путь: mf_core/api/v1/health.py
 # 3. Описание: Проверка состояния API
 
-router = APIRouter()
+from fastapi import APIRouter
 
-@router.get("/health")
+router = APIRouter(prefix="/api/v1/health", tags=["health"])
+
+@router.get("")
 def health_check():
     return {"status": "ok"}

@@ -1,13 +1,34 @@
-#mf_core/api/v1/files.py
-
+# mf_core/api/v1/files.py
 from fastapi import APIRouter, UploadFile, File
+from pathlib import Path
 
-# 1. Название: File Upload API
-# 2. Путь: mf_core/api/v1/files.py
-# 3. Описание: Загрузка и обработка файлов
+router = APIRouter(prefix="/api/v1/files", tags=["files"])
 
-router = APIRouter()
+UPLOAD_DIR = Path("uploads")
+UPLOAD_DIR.mkdir(exist_ok=True)
 
-@router.post("/files")
+
+@router.post("/upload")
 async def upload_file(file: UploadFile = File(...)):
-    return {"filename": file.filename}
+    file_path = UPLOAD_DIR / file.filename
+    content = await file.read()
+
+    # сохраняем файл
+    with open(file_path, "wb") as f:
+        f.write(content)
+
+    # создаём preview
+    preview = None
+    try:
+        # пробуем прочитать как текст UTF-8
+        text = content.decode("utf-8")
+        preview = text[:100]  # первые 100 символов
+    except UnicodeDecodeError:
+        # бинарные файлы → preview не делаем
+        preview = None
+
+    return {
+        "status": "uploaded",
+        "filename": file.filename,
+        "preview": preview,
+    }
